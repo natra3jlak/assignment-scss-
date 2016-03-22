@@ -1,0 +1,85 @@
+/* ========== variables ========== */
+
+$baseThickness: 1px;
+
+/* ========== mixins ========== */
+
+@mixin transform {
+    transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+}
+
+@mixin appearance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+     appearance:none;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+/* ========== style ========== */
+
+.modal-body {
+    input[type='radio'] {
+        @include transform;
+        @include appearance;
+        @include border-radius(50%);
+        margin: 0 8px 0 4px;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        border: $baseThickness solid #A9A9A9;
+        outline: none;
+        &:before {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 80%;
+            margin: 10% auto;
+            @include border-radius(50%);
+        }
+        &:checked:before {
+            background: #0C8BD6;
+        }
+    }
+    label {
+        border-top: $baseThickness solid #CCE2E8;
+        line-height: 25px;
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+        background: #EAF1F3;
+        font-weight: normal;
+    }
+}
+
+.modal-footer.noPadding {
+    padding: 0;
+}
+
+.modal-body.noPadding {
+    padding: 0;
+}
+
+.btn.sharp {
+    @include border-radius(0);
+    padding: 10px;
+    background-color: #0C8BD6;
+}
+
+.modal-header.plain {
+    border: none;
+    padding-bottom: 8px;
+}

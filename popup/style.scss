@@ -1,0 +1,16 @@
+$primaryColor: #0C8BD6;
+
+.btn.sharp {
+  border-radius:0;
+  padding: 10px;
+  background-color: $primaryColor;
+}
+
+.modal-footer.noPadding {
+	padding: 0;
+}
+
+.modal-header.plain {
+	border:none;
+	padding-bottom: 0;
+}
